@@ -149,6 +149,7 @@ module.exports = function(options){
             error: function(err) {
               done(err);
             },
+            importer: options.importer,
             includePaths: [ sassDir ].concat(options.include_paths || options.includePaths || []),
             imagePath: options.image_path || options.imagePath,
             outputStyle: options.output_style || options.outputStyle
