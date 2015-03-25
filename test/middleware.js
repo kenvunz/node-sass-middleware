@@ -59,7 +59,7 @@ describe('Using middleware', function () {
           result = sass.renderSync({ data: filesrc.toString() });
       request(server)
         .get('/test.css')
-        .expect(result.css)
+        .expect(result.css.toString("utf8"))
         .expect(200, done);
     });
 
@@ -68,14 +68,14 @@ describe('Using middleware', function () {
           result = sass.renderSync({ data: filesrc.toString() });
       request(server)
         .get('/test.css')
-        .expect(result.css)
+        .expect(result.css.toString("utf8"))
         .expect(200, function (err) {
           if (err) {
             done(err);
           } else {
             (function checkFile() {
               if (fs.existsSync(cssfile)) {
-                fs.readFileSync(cssfile).toString().should.equal(result.css);
+                fs.readFileSync(cssfile).toString().should.equal(result.css.toString("utf8"));
                 done();
               } else {
                 setTimeout(checkFile, 25);

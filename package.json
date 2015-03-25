@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "mkdirp": "0.5.x",
-    "node-sass": "^2.0.1"
+    "node-sass": "git://github.com/sass/node-sass#v3.0.0-alpha.1"
   },
   "devDependencies": {
     "connect": "^3.3.4",
