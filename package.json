@@ -24,14 +24,14 @@
   "main": "./middleware.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/sass/node-sass-middleware.git"
+    "url": "git://github.com/kenvunz/node-sass-middleware.git"
   },
   "engines": {
     "node": ">=0.10.0"
   },
   "dependencies": {
     "mkdirp": "0.5.x",
-    "node-sass": "^3.0.0-beta.4"
+    "node-sass": "sass/node-sass@beta"
   },
   "devDependencies": {
     "connect": "^3.3.4",
