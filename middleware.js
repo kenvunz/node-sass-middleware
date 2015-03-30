@@ -107,8 +107,8 @@ module.exports = function(options){
 
         if (err) {
           var fileLineColumn = sassPath + ':' + err.line + ':' + err.column;
-          data = err.message + ' in ' + fileLineColumn;
-          data += '\nbody:before { white-space: pre; font-family: monospace; content: "' + data + '"';
+          var message = err.message + ' in ' + fileLineColumn;
+          data = '/*\n' + message + '\n*/\nbody:before { white-space: pre; font-family: monospace; content: "' + message.replace(/\n/g, "\\A ") + '"';
 
           if (debug) logError(data);
           if (options.error) options.error(err);
